@@ -10,6 +10,7 @@ import logger from 'redux-logger';
 import reducers from './reducers';
 import { BrowserRouter } from "react-router-dom";
 import { Router, Route, Switch } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
