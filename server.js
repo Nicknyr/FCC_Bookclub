@@ -3,14 +3,34 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/api/auth');
 const passportSetup = require('./config/passport-setup');
+const cookieSession = require('cookie-session');
+const keys = require('./config/keys');
+const passport = require('passport');
 
 // Hooks up routes/api/items file
 const items = require('./routes/api/items');
 
 const app = express();
 
+process.on('unhandledRejection', (reason, p) => {
+  console.log('Unhandled Rejection at: Promise', p, 'reason:', reason);
+  // application specific logging, throwing an error, or other logic here
+});
+
 // Boderparser Middleware
 app.use(bodyParser.json());
+
+// sets up session cookies
+app.use(cookieSession({
+  // Max age set to 1 day
+  maxAge: 24 * 60 * 60 * 1000,
+  // Uses cookieKey from keys file to encrypt
+  keys: [keys.session.cookieKey]
+}));
+
+// initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 // DB Config
 const db = require('./config/keys').mongoURI;
