@@ -17,12 +17,12 @@ router.get('/logout', (req, res) => {
 // auth with github
 // localhost:5000/auth/github
 router.get('/github', passport.authenticate('github', {
-  //scope: ['profile']
+  scope: ['profile']
 }));
 
 // callback route for github to redirect to
 // localhost:5000/auth/github/redirect
-router.get('/github/redirect', (req, res) => {
+router.get('/github/redirect', passport.authenticate('github'), (req, res) => {
   res.send('You reached the callback URI');
 })
 
