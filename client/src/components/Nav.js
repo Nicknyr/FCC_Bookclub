@@ -47,7 +47,7 @@ class NavigationBar extends Component {
                  <NavLink href="/users/">Users</NavLink>
                </NavItem>
                <NavItem>
-                 <NavLink href="/login/">Log in</NavLink>
+                 <NavLink href="/auth/login">Log in</NavLink>
                </NavItem>
              </Nav>
            </Collapse>
