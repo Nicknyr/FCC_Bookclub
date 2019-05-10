@@ -1,27 +1,30 @@
 
 export default function reducer (state = {
-  data: {}
+  data: {},
+  books: '',
+  copyright: ''
 }, action) {
   switch(action.type) {
-    case "FETCH_BOOK": {
+    case "FETCH_NYT_BOOKS": {
            return {
                ...state,
                fetching: true
            }
        }
-       case "FETCH_BOOK_REJECTED": {
+       case "FETCH_NYT_BOOKS_REJECTED": {
            return {
                ...state,
                fetching: false,
                error: action.payload
            }
        }
-       case "FETCH_BOOK_FULFILLED": {
+       case "FETCH_NYT_BOOKS_FULFILLED": {
            return {
                ...state,
                fetching: false,
                fetched: true,
-               data: action.payload
+               data: action.payload,
+               copyright: action.payload.copyright
            }
        }
    default: return state;

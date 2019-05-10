@@ -7,10 +7,7 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  } from 'reactstrap';
 
 class NavigationBar extends Component {
   constructor(props) {
@@ -47,7 +44,7 @@ class NavigationBar extends Component {
                  <NavLink href="/users/">Users</NavLink>
                </NavItem>
                <NavItem>
-                 <NavLink href="localhost:5000/auth/github">Log in</NavLink>
+                 <NavLink href="http://localhost:5000/auth/github">Log in</NavLink>
                </NavItem>
              </Nav>
            </Collapse>
