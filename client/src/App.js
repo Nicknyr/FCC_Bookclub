@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.scss';
-import Books from './components/Books.js';
+import BestSellers from './components/BestSellers.js';
 import NavigationBar from './components/Nav';
 import Jumbotron from './components/Jumbotron';
 import { Container, Row, Col } from 'reactstrap';
@@ -13,7 +13,7 @@ function App() {
       <NavigationBar />
       <Jumbotron />
         <Container>
-          <Books />
+          <BestSellers />
         </Container>
       <Footer />
     </div>
