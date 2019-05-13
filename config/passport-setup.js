@@ -4,6 +4,7 @@ const GitHubStrategy = require('passport-github').Strategy;
 const keys = require('./keys');
 const User = require('../models/user-model');
 
+
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });

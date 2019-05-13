@@ -1,8 +1,49 @@
 
 .footer {
-  background-color: $black;
-  color: $white;
+  //background-color: $black;
+  color: $darkgrey;
   height: auto;
   width: 100%;
-  margin-top: 30em;
+  margin-top: 2em;
+  margin-right: 0;
+  margin-left: 0;
+  padding-bottom: 3em;
+  padding-top: 3em;
+}
+
+.footer-logo .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.footer-logo {
+  height: auto;
+  width: 100%;
+  //background-color: red;
+  text-align: center;
+  margin-top: 20em;
+}
+
+.book {
+  color: $green;
+}
+
+.footer-col {
+  text-align: center;
+
+  ul {
+    list-style-type: none;
+
+    li {
+      display: inline-block;
+      margin-right: 2em;
+
+      a {
+        color: $darkgrey;
+        &:hover {
+          color: $darkgrey;
+        }
+      }
+    }
+  }
 }

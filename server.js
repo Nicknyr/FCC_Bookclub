@@ -6,6 +6,8 @@ const passportSetup = require('./config/passport-setup');
 const cookieSession = require('cookie-session');
 const keys = require('./config/keys');
 const passport = require('passport');
+const profileRoutes = require('./routes/api/profile-routes');
+
 
 // Hooks up routes/api/items file
 const items = require('./routes/api/items');
@@ -41,6 +43,8 @@ app.use('/api/items', items);
 
 // Use auth.js's routes
 app.use('/auth', authRoutes);
+// Use profile-routes routes for profile page
+app.use('/profile', profileRoutes);
 
 const port = process.env.PORT || 5000;
 

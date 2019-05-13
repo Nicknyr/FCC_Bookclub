@@ -23,8 +23,10 @@ router.get('/github', passport.authenticate('github', {
 // callback route for github to redirect to
 // localhost:5000/auth/github/redirect
 router.get('/github/redirect', passport.authenticate('github'), (req, res) => {
-  res.send('You reached the callback URI');
-})
+  //res.send(req.user.displayName);
+  //res.send('You reached the callback URI');
+  res.redirect('/profile/');
+});
 
 
 module.exports = router;

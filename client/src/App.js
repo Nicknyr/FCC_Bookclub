@@ -6,6 +6,11 @@ import NavigationBar from './components/Nav';
 import Jumbotron from './components/Jumbotron';
 import { Container, Row, Col } from 'reactstrap';
 import Footer from './components/Footer';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
+
+library.add(fab, faCheckSquare, faCoffee);
 
 function App() {
   return (

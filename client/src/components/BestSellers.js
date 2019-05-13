@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import { fetchBook } from '../actions/fetchBookAction';
 import { fetchNYTBestSellers } from '../actions/fetchNYTBestSellersAction';
 import { Container, Row, Col } from 'reactstrap';
-import BookShelf from './images/bookshelf.jpg';
 
 class Books extends Component {
 
