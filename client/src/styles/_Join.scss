@@ -1,0 +1,58 @@
+
+.join-section {
+  height: auto;
+  background-color: $blue;
+  text-align: center;
+  margin-top: 5em;
+
+  button {
+    background-color: $bright-blue;
+    border-radius: 20px;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: 400;
+    height: 4em;
+    width: 25em;
+    margin-bottom: 3em;
+    padding: 1em;
+
+    &:hover {
+      background-color: $white;
+      color: $blue;
+    }
+  }
+
+  h2, h3 , p {
+    color: $white;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+
+  p {
+    color: #e2e9f1;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  h3 {
+    font-size: 1em;
+    font-weight: 900;
+    letter-spacing: .75px;
+    text-transform: uppercase;
+    margin-bottom: 1.5em;
+    margin-top: 2em;
+  }
+}
+
+
+.join-form {
+  input {
+    height: 3em;
+    width: 23em;
+    margin: 1em;
+    border-radius: 10px;
+    border: none;
+  }
+
+}

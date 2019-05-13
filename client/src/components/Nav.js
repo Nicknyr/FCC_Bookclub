@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBook } from '@fortawesome/free-solid-svg-icons';
 import {
   Collapse,
   Navbar,
@@ -27,7 +29,14 @@ class NavigationBar extends Component {
      return (
        <div>
          <Navbar color="light" light expand="md">
-           <NavbarBrand href="/">Book Trading Club</NavbarBrand>
+           <NavbarBrand href="/">
+             <FontAwesomeIcon
+               className="book"
+               icon={faBook}
+               size="lg"
+             />
+           <span className="book-trading-club-title">Book Trading Club</span>
+           </NavbarBrand>
            <NavbarToggler onClick={this.toggle} />
            <Collapse isOpen={this.state.isOpen} navbar>
              <Nav className="ml-auto" navbar>

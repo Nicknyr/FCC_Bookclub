@@ -1,0 +1,30 @@
+
+
+.landing {
+  padding-top: 3em;
+
+  h1 {
+    display: none;
+  }
+
+  p {
+    //color: $black;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+
+  button {
+    background-color: $bright-blue;
+    border-radius: 20px;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: 400;
+    height: 4em;
+    width: 25em;
+    margin-bottom: 3em;
+    margin-top: 1em;
+    padding: 1em;
+  }
+}

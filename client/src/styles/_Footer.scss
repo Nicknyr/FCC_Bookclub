@@ -1,14 +1,14 @@
 
 .footer {
   //background-color: $black;
-  color: $darkgrey;
+  color: #61707a;
   height: auto;
   width: 100%;
   margin-top: 2em;
-  margin-right: 0;
-  margin-left: 0;
-  padding-bottom: 3em;
-  padding-top: 3em;
+  //margin-right: -15px;
+  //margin-left: -15px;
+  padding-bottom: 1em;
+  padding-top: 1em;
 }
 
 .footer-logo .row {
@@ -21,11 +21,12 @@
   width: 100%;
   //background-color: red;
   text-align: center;
-  margin-top: 20em;
+  //padding-top: 1em;
+  //padding-bottom: 1em;
 }
 
 .book {
-  color: $green;
+  color: $bright-blue;
 }
 
 .footer-col {
@@ -36,7 +37,8 @@
 
     li {
       display: inline-block;
-      margin-right: 2em;
+      margin-right: 1em;
+      font-size: 14px;
 
       a {
         color: $darkgrey;
