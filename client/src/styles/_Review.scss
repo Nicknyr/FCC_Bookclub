@@ -1,0 +1,35 @@
+
+.review-section {
+  background-color: $bright-blue;
+  height: auto;
+  border-radius: 20px;
+  margin-top: 5em;
+
+  h3 {
+    font-size: 1em;
+    font-weight: 900;
+    letter-spacing: .75px;
+    text-transform: uppercase;
+    margin-bottom: 1.5em;
+    margin-top: 2em;
+    text-align: center;
+    color: $white;
+  }
+
+  .review-paragraph {
+    color: $white;
+    line-height: 2;
+    font-weight: 400;
+    font-style: italic;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  .user {
+    color: $white;
+    font-weight: 500;
+    font-size: 1.2em;
+    padding-left: 1em;
+    padding-bottom: 1em;
+  }
+}

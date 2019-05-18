@@ -28,12 +28,13 @@ class NavigationBar extends Component {
    render() {
      return (
        <div>
-         <Navbar color="light" light expand="md">
+         <Navbar expand="md">
            <NavbarBrand href="/">
              <FontAwesomeIcon
                className="book"
                icon={faBook}
                size="lg"
+               color="white"
              />
            <span className="book-trading-club-title">Book Trading Club</span>
            </NavbarBrand>

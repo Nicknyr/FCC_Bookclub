@@ -9,6 +9,7 @@ import logger from 'redux-logger';
 import reducers from './reducers';
 import { BrowserRouter } from "react-router-dom";
 import { Router, Route, Switch } from 'react-router-dom';
+import ProfilePage from './components/ProfilePage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
@@ -24,6 +25,7 @@ ReactDOM.render(
         <BrowserRouter>
         <Switch>
           <Route exact path="/" component={App} />
+          <Route path="/profile" component={ProfilePage} />
         </Switch>
       </BrowserRouter>
     </Provider>,

@@ -1,0 +1,50 @@
+
+.features-section {
+  margin-top: 3em;
+  margin-bottom: 3em;
+  text-align: left;
+  padding: 1em;
+  //padding-left: 1em;
+
+  h3 {
+    font-size: 1em;
+    font-weight: 900;
+    letter-spacing: .75px;
+    text-transform: uppercase;
+    margin-bottom: 1.5em;
+    margin-top: 2em;
+    text-align: left;
+    //padding-left: 1em;
+  }
+
+  p {
+    color: #61707a;
+    line-height: 2;
+    font-weight: 400;
+    text-align: left;
+    //padding-left: 1em;
+    //padding-right: 1em;
+  }
+}
+
+.feature {
+  margin-top: 3em;
+}
+
+
+@media(min-width: 860px) {
+  .features-section {
+    padding-left: 1em;
+    text-align: center;
+  }
+
+  h3 {
+    padding-left: 1em;
+    text-align: center;
+  }
+
+  p {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}

@@ -1,7 +1,6 @@
 
 
 .landing {
-  padding-top: 3em;
 
   h1 {
     display: none;
@@ -12,6 +11,8 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 28px;
+    padding-top: 1em;
+    padding-bottom: 1em;
   }
 
 
@@ -24,7 +25,26 @@
     height: 4em;
     width: 25em;
     margin-bottom: 3em;
-    margin-top: 1em;
+    //margin-top: 1em;
     padding: 1em;
   }
+
+  a {
+    color: $white;
+
+    &:hover {
+      color:$white;
+      text-decoration: none;
+    }
+  }
+}
+
+.pile-of-books {
+  //background-color: red;
+  text-align: center;
+}
+
+.greeting {
+  //background-color: yellow;
+  margin-top: 3em;
 }

@@ -2,3 +2,15 @@
 .book-trading-club-title {
   padding-left: .7em;
 }
+
+.navbar {
+  background-color: $bright-blue;
+
+  a {
+    color: $white;
+  }
+
+  .book {
+    color: $white;
+  }
+}
