@@ -25,7 +25,7 @@ router.get('/github', passport.authenticate('github', {
 router.get('/github/redirect', passport.authenticate('github'), (req, res) => {
   //res.send(req.user.displayName);
   //res.send('You reached the callback URI');
-  res.redirect('/profile/');
+  res.redirect('http://localhost:3000/profile/');
 });
 
 

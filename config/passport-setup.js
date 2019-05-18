@@ -23,7 +23,7 @@ passport.use(new GitHubStrategy({
     callbackURL: '/auth/github/redirect'
   }, (accessToken, refreshToken, profile, done) => {
     // This used to console.log user data from API, doesn't work now
-    console.log(profile);
+    //console.log(profile);
     // Check if user already exists in DB
     User.findOne({githubID: profile.id}).then((currentUser) => {
       if(currentUser) {
@@ -35,8 +35,11 @@ passport.use(new GitHubStrategy({
       else {
         // If user doesn't exist, create it
         new User({
-          username: profile.displayName,
-          githubID: profile.id
+          name: profile.displayName,
+          username: profile.username,
+          githubID: profile.id,
+          profileUrl: profile.profileUrl,
+          avatar: profile.photos[0].value
         }).save().then((newUser) => {
           console.log("New user created: " + newUser);
           // passes new user to serializeUser()

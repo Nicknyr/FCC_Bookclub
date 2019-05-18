@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 //import { fetchBook } from '../actions/fetchBookAction';
-import { fetchNYTBestSellers } from '../actions/fetchNYTBestSellersAction';
-import { Container, Row, Col } from 'reactstrap';
+//import { fetchNYTBestSellers } from '../actions/fetchNYTBestSellersAction';
+import { fetchGithubUserData } from '../actions/fetchGithubUserDataAction'
+import { Row, Col } from 'reactstrap';
 import NavigationBar from './Nav';
 import Footer from './Footer';
 import Avatar from './images/avatar.png';
@@ -12,10 +13,12 @@ class Profile extends Component {
 
   componentDidMount = () => {
     //this.props.fetchBook();
-    this.props.fetchNYTBestSellers();
+    //this.props.fetchNYTBestSellers();
+    this.props.fetchGithubUserData();
   }
 
   render() {
+    //console.log()
     return (
       <div>
         <NavigationBar />
@@ -37,12 +40,14 @@ class Profile extends Component {
 
 const mapDispatchToProps = dispatch => ({
   //fetchBook: () => dispatch(fetchBook()),
-  fetchNYTBestSellers: () => dispatch(fetchNYTBestSellers())
+  //fetchNYTBestSellers: () => dispatch(fetchNYTBestSellers())
+  fetchGithubUserData: () => dispatch(fetchGithubUserData())
 })
 
 const mapStateToProps = state => ({
   //books: state.fetchBookReducer,
-  nyt: state.fetchNYTBestSellersReducer
+  //nyt: state.fetchNYTBestSellersReducer
+  userData: state.fetchGithubUserDataReducer
 })
 
 
