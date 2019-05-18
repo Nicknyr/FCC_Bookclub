@@ -16,12 +16,13 @@ passport.deserializeUser((id, done) => {
 });
 
 // Github
-// This way successfully writes to the database, redirects the user back to '/' page, and successfully outputs user data from API
+// This way used to successfully write to the database, redirect the user back to '/' page, and output user data from API, hasn't work since I added cookie related serializeUser and deserializeUser
 passport.use(new GitHubStrategy({
     clientID: keys.github.clientID,
     clientSecret: keys.github.clientSecret,
     callbackURL: '/auth/github/redirect'
-  }, (accessToken, refreshToken, profile, cb, done) => {
+  }, (accessToken, refreshToken, profile, done) => {
+    // This used to console.log user data from API, doesn't work now
     console.log(profile);
     // Check if user already exists in DB
     User.findOne({githubID: profile.id}).then((currentUser) => {
