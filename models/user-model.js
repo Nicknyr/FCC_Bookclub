@@ -1,13 +1,27 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const bookSchema = new Schema({
+  bookTitle: {
+    type: String,
+    required: true
+  },
+  author: {
+    type: String,
+    required: true
+  },
+  genre: {
+    type: String
+  }
+});
 
 const userSchema = new Schema({
   name: String,
   username: String,
   githubID: String,
   profileUrl: String,
-  avatar: String
+  avatar: String,
+  books: bookSchema
 });
 
 const User = mongoose.model('user', userSchema);

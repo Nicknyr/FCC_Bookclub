@@ -25,11 +25,9 @@ router.post('/', urlencodedParser, (req, res) => {
   newBook.save()
     .then(book => {
       res.json(book)
-      //res.send("Saved book to DB")
     })
     .catch(err => {
       res.send("Error posting to DB")
-      //console.log("Error is : " + err);
     });
 });
 

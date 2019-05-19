@@ -1,4 +1,12 @@
 const router = require('express').Router();
+const bodyParser = require('body-parser');
+
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
+
+
+// User Model
+const User = require('../../models/user-model');
+
 
 // Checks if user is not logged in
 const authCheck = (req, res, next) => {
@@ -16,5 +24,31 @@ router.get('/', authCheck, (req, res) => {
   res.send('you are logged in, this is your profile : ' + req.user);
 });
 
+
+router.post('/', urlencodedParser, (req, res) => {
+  console.log(req.body);
+
+  const newUser = new User({
+    name: req.body.name,
+    username: req.body.username,
+    githubID: req.body.githubID,
+    profileUrl: req.body.profileUrl,
+    avatar: req.body.avatar,
+    books: {
+      bookTitle: req.body.books.bookTitle,
+      author: req.body.books.author,
+      genre: req.body.books.genre
+    }
+  });
+
+  newUser.save()
+    .then(data => {
+      res.json(data)
+    })
+    .catch(err => {
+      res.send("Error posting to DB")
+    });
+
+});
 
 module.exports = router;

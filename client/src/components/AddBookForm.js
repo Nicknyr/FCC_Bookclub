@@ -4,7 +4,7 @@ import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 class AddBookForm extends Component {
   render() {
     return (
-      <Form id="contact-form" method="POST" action="/book">
+      <Form id="contact-form" method="POST" action="/profile">
         <FormGroup>
           <Label for="book-title-label">Book Title</Label>
           <Input type="text" name="bookTitle" placeholder="Enter name of book" />

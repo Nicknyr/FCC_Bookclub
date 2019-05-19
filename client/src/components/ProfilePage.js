@@ -35,7 +35,7 @@ class Profile extends Component {
         </Col>
         <Col md={{size: 6, offset: 3 }} xs={{ size: 10, offset: 1}} className="add-book-form">
           <h4>Add New Book</h4>
-        
+        <AddBookForm />
         </Col>
         <Footer />
       </div>
