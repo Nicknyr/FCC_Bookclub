@@ -1,9 +1,6 @@
 import React from 'react';
-import BestSellers from './components/BestSellers.js';
 import NavigationBar from './components/Nav';
 import Footer from './components/Footer';
-import Jumbotron from './components/Jumbotron';
-import { Container, Row, Col } from 'reactstrap';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faCheckSquare, faCoffee, faBookReader, faUsers, faThumbsUp } from '@fortawesome/free-solid-svg-icons'
@@ -20,11 +17,6 @@ function App() {
     <div className="App">
       <NavigationBar />
       <Landing />
-        {/*
-          <Container>
-            <BestSellers />
-          </Container>
-          */}
       <Features />
       <Review />
       <Join />

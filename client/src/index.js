@@ -10,6 +10,7 @@ import reducers from './reducers';
 import { BrowserRouter } from "react-router-dom";
 import { Router, Route, Switch } from 'react-router-dom';
 import ProfilePage from './components/ProfilePage';
+import AddBookForm from './components/AddBookForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
@@ -26,6 +27,7 @@ ReactDOM.render(
         <Switch>
           <Route exact path="/" component={App} />
           <Route path="/profile" component={ProfilePage} />
+          <Route path="/book" component={AddBookForm} />
         </Switch>
       </BrowserRouter>
     </Provider>,

@@ -1,34 +1,41 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-//import { fetchBook } from '../actions/fetchBookAction';
-//import { fetchNYTBestSellers } from '../actions/fetchNYTBestSellersAction';
-import { fetchGithubUserData } from '../actions/fetchGithubUserDataAction'
+import { fetchGithubUserData } from '../actions/fetchGithubUserDataAction';
 import { Row, Col } from 'reactstrap';
 import NavigationBar from './Nav';
 import Footer from './Footer';
-import Avatar from './images/avatar.png';
 import ProfileBooksTable from './ProfileBooksTable';
+import AddBookForm from './AddBookForm';
 
 class Profile extends Component {
 
   componentDidMount = () => {
-    //this.props.fetchBook();
-    //this.props.fetchNYTBestSellers();
     this.props.fetchGithubUserData();
   }
 
   render() {
-    //console.log()
+    //const username = this.props.userData.username;
+    const name = this.props.userData.name;
+    const avatar = this.props.userData.avatar;
+    const link = this.props.userData.profileUrl;
+    const s = "'s";
+
     return (
       <div>
         <NavigationBar />
         <Col md={{size: 6, offset: 3 }} xs={{ size: 10, offset: 1}} className="profile-page">
-          <img src={Avatar} alt="Profile avatar" height="150" />
-          <h2>User's Profile</h2>
+          <a href={link}>
+            <img src={avatar} alt="Profile avatar" height="150" />
+          </a>
+          <h2>{name}{s} Profile</h2>
           <Row className="profile-books">
             <h4>Books Available</h4>
             <ProfileBooksTable />
           </Row>
+        </Col>
+        <Col md={{size: 6, offset: 3 }} xs={{ size: 10, offset: 1}} className="add-book-form">
+          <h4>Add New Book</h4>
+        
         </Col>
         <Footer />
       </div>
@@ -39,14 +46,10 @@ class Profile extends Component {
 
 
 const mapDispatchToProps = dispatch => ({
-  //fetchBook: () => dispatch(fetchBook()),
-  //fetchNYTBestSellers: () => dispatch(fetchNYTBestSellers())
   fetchGithubUserData: () => dispatch(fetchGithubUserData())
 })
 
 const mapStateToProps = state => ({
-  //books: state.fetchBookReducer,
-  //nyt: state.fetchNYTBestSellersReducer
   userData: state.fetchGithubUserDataReducer
 })
 
