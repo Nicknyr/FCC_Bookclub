@@ -6,7 +6,7 @@ import { faCheckSquare, faCoffee, faBook } from '@fortawesome/free-solid-svg-ico
 
 const Footer = (props) => {
   return (
-    <div>
+      <Container>
       <Row className="footer">
           <Col className="footer-col" md="4" sm="12">
             <ul>
@@ -64,13 +64,13 @@ const Footer = (props) => {
       <Row className="footer-logo">
         <Col md="12">
           <FontAwesomeIcon
-            className="book"
+            className="book-footer"
             icon={faBook}
             size="3x"
           />
         </Col>
       </Row>
-    </div>
+    </Container>
   );
 };
 

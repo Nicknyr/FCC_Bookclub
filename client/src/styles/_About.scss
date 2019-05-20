@@ -1,0 +1,32 @@
+
+.about-section {
+  padding: 1em;
+
+  h3 {
+    text-align: center;
+    font-size: 1em;
+    font-weight: 900;
+    letter-spacing: .75px;
+    text-transform: uppercase;
+    margin-bottom: 1.5em;
+    margin-top: 2em;
+    color: $bright-blue;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 40px;
+    line-height: 44px;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    font-weight: 300;
+  }
+
+  p {
+    text-align: center;
+    color: #7d909d;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+  }
+}

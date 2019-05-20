@@ -28,7 +28,7 @@ class NavigationBar extends Component {
    render() {
      return (
        <div>
-         <Navbar expand="md">
+         <Navbar expand="md" dark>
            <NavbarBrand href="/">
              <FontAwesomeIcon
                className="book"
@@ -38,10 +38,10 @@ class NavigationBar extends Component {
              />
            <span className="book-trading-club-title">Book Trading Club</span>
            </NavbarBrand>
-           <NavbarToggler onClick={this.toggle} />
+           <NavbarToggler onClick={this.toggle} id="hamburger"/>
            <Collapse isOpen={this.state.isOpen} navbar>
              <Nav className="ml-auto" navbar>
-               <NavItem>
+               <NavItem className="nav-item">
                  <NavLink href="/books/">Books</NavLink>
                </NavItem>
                <NavItem>

@@ -1,10 +1,11 @@
 import React from 'react';
-import { Container, Button, Row, Col } from 'reactstrap';
+import { Button, Row, Col, Container } from 'reactstrap';
 import PileOfBooks from './images/pileofbooks.svg';
 
 
 const Landing = (props) => {
   return (
+    <Container>
       <Row className="landing">
         <Col md={{size: 5 }} xs={{ size: 10, offset: 1}} className="greeting">
           <h1>Book Trading Club</h1>
@@ -14,10 +15,11 @@ const Landing = (props) => {
             <a href="http://localhost:5000/auth/github">Log In</a>
           </Button>{' '}
         </Col>
-        <Col md={{size: 5 }} className="pile-of-books">
-          <img src={PileOfBooks} alt="Pile of Books" width="400px"/>
+        <Col md={{size: 5 }} xs={{size: 12}} className="pile-of-books">
+          <img src={PileOfBooks} alt="Pile of Books" width="500px" />
         </Col>
       </Row>
+    </Container>
   );
 };
 

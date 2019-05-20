@@ -2,8 +2,9 @@
 .review-section {
   background-color: $bright-blue;
   height: auto;
-  border-radius: 20px;
+  border-radius: 5px;
   margin-top: 5em;
+  padding: 1em;
 
   h3 {
     font-size: 1em;
@@ -13,23 +14,33 @@
     margin-bottom: 1.5em;
     margin-top: 2em;
     text-align: center;
-    color: $white;
+    color: $yellow;
+    font-weight: bolder;
   }
 
   .review-paragraph {
     color: $white;
-    line-height: 2;
+    line-height: 28px;
     font-weight: 400;
-    font-style: italic;
+    //font-style: italic;
     padding-left: 1em;
     padding-right: 1em;
+    font-size: 20px;
   }
 
   .user {
     color: $white;
     font-weight: 500;
-    font-size: 1.2em;
-    padding-left: 1em;
-    padding-bottom: 1em;
+    font-size: 20px;
+    padding-bottom: 3em;
+  }
+
+  .user-review {
+    //background-color: yellow;
+    padding-left: 3em;
+  }
+
+  .bubble {
+    margin-left: .3em;
   }
 }

@@ -24,7 +24,7 @@ class Trades extends Component {
               <p>Name of Book</p>
               <p>Author of Book</p>
             </Col>
-            <Col md={{size: 1}} className="arrow-container">
+            <Col md={{size: 1}} xs={{size: 1}} className="arrow-container">
               <FontAwesomeIcon
                 icon={faArrowRight}
                 size="2x"
@@ -43,7 +43,7 @@ class Trades extends Component {
               <p>Name of Book</p>
               <p>Author of Book</p>
             </Col>
-            <Col md={{size: 1}} className="arrow-container">
+            <Col md={{size: 1}} xs={{size: 1}} className="arrow-container">
               <FontAwesomeIcon
                 icon={faArrowRight}
                 size="2x"

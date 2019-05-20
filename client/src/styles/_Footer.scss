@@ -1,14 +1,15 @@
 
 .footer {
   //background-color: $black;
-  color: #61707a;
+  color: #7d909d;
   height: auto;
-  width: 100%;
+  max-width: 100%;
   margin-top: 2em;
   //margin-right: -15px;
   //margin-left: -15px;
   padding-bottom: 1em;
   padding-top: 1em;
+  overflow: none;
 }
 
 .footer-logo .row {
@@ -25,12 +26,14 @@
   //padding-bottom: 1em;
 }
 
-.book {
+.book-footer {
   color: $bright-blue;
+  margin-bottom: 1.5em;
 }
 
 .footer-col {
   text-align: center;
+  padding-top: 1em;
 
   ul {
     list-style-type: none;
