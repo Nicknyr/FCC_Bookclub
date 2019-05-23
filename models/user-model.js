@@ -21,7 +21,7 @@ const userSchema = new Schema({
   githubID: String,
   profileUrl: String,
   avatar: String,
-  books: bookSchema
+  books: [bookSchema]
 });
 
 const User = mongoose.model('user', userSchema);

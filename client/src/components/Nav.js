@@ -28,7 +28,7 @@ class NavigationBar extends Component {
    render() {
      return (
        <div>
-         <Navbar expand="md" dark>
+         <Navbar expand="md" light>
            <NavbarBrand href="/">
              <FontAwesomeIcon
                className="book"

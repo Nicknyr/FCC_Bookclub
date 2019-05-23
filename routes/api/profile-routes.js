@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
+// localhost:3000/profile
 
 // User Model
 const User = require('../../models/user-model');
@@ -35,9 +36,9 @@ router.post('/', urlencodedParser, (req, res) => {
     profileUrl: req.body.profileUrl,
     avatar: req.body.avatar,
     books: {
-      bookTitle: req.body.books.bookTitle,
-      author: req.body.books.author,
-      genre: req.body.books.genre
+      bookTitle: req.body.bookTitle,
+      author: req.body.author,
+      genre: req.body.genre
     }
   });
 

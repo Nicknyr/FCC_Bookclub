@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import { Row, Col } from 'reactstrap';
+import { Row, Col, Container } from 'reactstrap';
 import NavigationBar from './Nav';
 import Footer from './Footer';
 import UserTable from './UserTable';
@@ -16,10 +16,12 @@ class Users extends Component {
     return (
       <div>
         <NavigationBar />
-        <Col md={{size: 10, offset: 1 }} xs={{ size: 10, offset: 1}} className="user-list">
-          <h2>Users</h2>
-          <UserTable />
-        </Col>
+        <Container className="user-container">
+          <Col md={{size: 10, offset: 1 }} xs={{ size: 12}} className="user-list">
+            <h2>Users</h2>
+            <UserTable />
+          </Col>
+        </Container>
         <Footer />
       </div>
     );
