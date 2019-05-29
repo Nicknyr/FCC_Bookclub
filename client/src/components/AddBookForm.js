@@ -23,7 +23,6 @@ class AddBookForm extends Component {
             <option>5</option>
           </Input>
         </FormGroup>
-        <Button>Submit</Button>
       </Form>
     );
   }

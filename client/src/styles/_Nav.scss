@@ -1,22 +1,33 @@
 
 .book-trading-club-title {
   padding-left: .7em;
+  color: $white;
+  //font-weight: 500;
 }
 
 .navbar {
-  //background-color: $bright-blue;
-
   a {
     color: $white;
   }
 
   .book {
-    color: $bright-blue;
+    color: $yellow;
   }
 
   #hamburger {
-    //background-color: black;
-    border: 2px solid lightgrey;
+    border: 2px solid $white;
   }
 
+}
+
+#my-nav {
+  background-color: $bright-blue;
+}
+
+#nav-link a {
+  color: $white;
+
+  &:hover {
+    color: $yellow;
+  }
 }

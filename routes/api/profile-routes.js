@@ -17,7 +17,7 @@ const authCheck = (req, res, next) => {
     }
     else {
       // If user is logged in call next in router.get
-      next();
+      //next();
     }
 };
 
@@ -44,6 +44,10 @@ router.post('/', urlencodedParser, (req, res) => {
 
   newUser.save()
     .then(data => {
+      /* User.findOne({ name: "Nick Kinlen" }).then(record => {
+        console.log("Found user : " + req.body.name);
+      });
+      */
       res.json(data)
     })
     .catch(err => {

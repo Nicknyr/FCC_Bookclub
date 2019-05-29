@@ -13,6 +13,7 @@ import ProfilePage from './components/ProfilePage';
 import AddBookForm from './components/AddBookForm';
 import Users from './components/Users';
 import Trades from './components/Trades';
+import BooksAvailable from './components/BooksAvailable';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
@@ -30,6 +31,7 @@ ReactDOM.render(
           <Route exact path="/" component={App} />
           <Route path="/profile" component={ProfilePage} />
           <Route path="/book" component={AddBookForm} />
+          <Route path="/books" component={BooksAvailable} />
           <Route path="/users" component={Users} />
           <Route path="/trades" component={Trades} />
         </Switch>

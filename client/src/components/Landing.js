@@ -5,7 +5,7 @@ import PileOfBooks from './images/pileofbooks.svg';
 
 const Landing = (props) => {
   return (
-    <Container>
+
       <Row className="landing">
         <Col lg={{size: 5}} md={{size: 7 }} xs={{ size: 10, offset: 1}} className="greeting">
           <h1>Book Trading Club</h1>
@@ -19,7 +19,7 @@ const Landing = (props) => {
           <img src={PileOfBooks} alt="Pile of Books" width="500px" />
         </Col>
       </Row>
-    </Container>
+    
   );
 };
 

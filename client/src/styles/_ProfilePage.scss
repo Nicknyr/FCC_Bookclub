@@ -28,3 +28,25 @@
     width: 100%;
   }
 }
+
+#card-avatar-img {
+  height: 200px;
+  width: auto;
+  padding: 1em;
+}
+
+#profile-card {
+  margin-bottom: 2em;
+}
+
+#add-book-button {
+  background-color: $bright-blue;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  display: block;
+}
+
+#update-profile-form {
+  margin-top: 1em;
+}
