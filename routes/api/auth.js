@@ -11,7 +11,8 @@ router.get('/login', (req, res) => {
 // auth logout
 router.get('/logout', (req, res) => {
   // Handle with Passportjs
-  res.send('Logging out');
+  req.logout();
+  res.send("you are logged out");
 })
 
 // auth with github

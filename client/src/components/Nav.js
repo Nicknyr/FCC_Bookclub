@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook } from '@fortawesome/free-solid-svg-icons';
+import {connect} from 'react-redux';
+import { fetchGithubUserData } from '../actions/fetchGithubUserDataAction';
+
 import {
   Collapse,
   Navbar,
@@ -25,6 +28,11 @@ class NavigationBar extends Component {
        isOpen: !this.state.isOpen
      });
    }
+
+  componentDidMount() {
+    this.props.fetchGithubUserData();
+  }
+
    render() {
      return (
        <div>
@@ -53,9 +61,19 @@ class NavigationBar extends Component {
                <NavItem id="nav-link">
                  <NavLink href="/users/">USERS</NavLink>
                </NavItem>
-               <NavItem id="nav-link">
-                 <NavLink href="http://localhost:5000/auth/github">LOG IN</NavLink>
-               </NavItem>
+               {/*
+                 if user isn't logged in display 'log in' link,
+                 if user is logged in display 'profile' link
+               */}
+               {
+                 (this.props.userData.username === undefined)
+                 ?  <NavItem id="nav-link">
+                    <NavLink href="http://localhost:5000/auth/github">LOG IN</NavLink>
+                    </NavItem>
+                 :  <NavItem id="nav-link">
+                    <NavLink href="http://localhost:5000/auth/github">PROFILE</NavLink>
+                    </NavItem>
+               }
              </Nav>
            </Collapse>
          </Navbar>
@@ -64,6 +82,12 @@ class NavigationBar extends Component {
    }
  }
 
+ const mapDispatchToProps = dispatch => ({
+   fetchGithubUserData: () => dispatch(fetchGithubUserData())
+ })
 
+ const mapStateToProps = state => ({
+   userData: state.fetchGithubUserDataReducer
+ })
 
-export default NavigationBar;
+export default connect(mapStateToProps, mapDispatchToProps)(NavigationBar);

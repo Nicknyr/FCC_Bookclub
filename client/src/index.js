@@ -10,9 +10,9 @@ import reducers from './reducers';
 import { BrowserRouter } from "react-router-dom";
 import { Router, Route, Switch } from 'react-router-dom';
 import ProfilePage from './components/ProfilePage';
-import AddBookForm from './components/AddBookForm';
 import Users from './components/Users';
 import Trades from './components/Trades';
+import AddBookModal from './components/AddBookModal';
 import BooksAvailable from './components/BooksAvailable';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
@@ -30,7 +30,7 @@ ReactDOM.render(
         <Switch>
           <Route exact path="/" component={App} />
           <Route path="/profile" component={ProfilePage} />
-          <Route path="/book" component={AddBookForm} />
+          <Route path="/book" component={AddBookModal} />
           <Route path="/books" component={BooksAvailable} />
           <Route path="/users" component={Users} />
           <Route path="/trades" component={Trades} />
