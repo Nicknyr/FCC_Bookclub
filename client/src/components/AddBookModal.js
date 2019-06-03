@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input } from 'reactstrap';
+import axios from 'axios';
 
 class AddBookModal extends React.Component {
   constructor(props) {
@@ -24,7 +25,22 @@ class AddBookModal extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const data = this.state;
-    console.log("Data from form :" + data.bookTitle, data.author, data.genre);
+    const bookTitle = this.state.bookTitle;
+    const author = this.state.author;
+    const genre = this.state.genre;
+    //console.log("Data from form :" + data.bookTitle, data.author, data.genre);
+    axios.post('/profile',{
+      bookTitle: bookTitle,
+      author: author,
+      genre: genre
+    })
+    .then(res => {
+      console.log(res);
+    })
+    .catch(err => {
+      console.log(err);
+    })
+
   }
 
   handleInputChange = (event) => {
@@ -46,21 +62,21 @@ class AddBookModal extends React.Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Add Book</ModalHeader>
           <ModalBody>
-            <Form onSubmit={this.handleSubmit} >
+            <Form method="POST" action="/profile" id="add-book-form" onSubmit={this.handleSubmit} >
               <FormGroup>
                 <Label for="book-title-label">Book Title</Label>
                 <Input
                   value={bookTitle}
-                  onChange={this.handleInputChange}
                   name="bookTitle"
+                  onChange={this.handleInputChange}
                   placeholder="Enter name of book" />
               </FormGroup>
               <FormGroup>
                 <Label for="book-author-label">Author</Label>
                 <Input
                   value={author}
-                  onChange={this.handleInputChange}
                   name="author"
+                  onChange={this.handleInputChange}
                   placeholder="Enter author of book" />
               </FormGroup>
               <FormGroup>
@@ -69,7 +85,8 @@ class AddBookModal extends React.Component {
                   onChange={this.handleInputChange}
                   value={genre}
                   type="select"
-                  name="genre" id="exampleSelect">
+                  name="genre"
+                  id="exampleSelect">
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>

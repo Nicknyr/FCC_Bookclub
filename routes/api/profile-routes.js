@@ -25,23 +25,6 @@ router.get('/', authCheck, (req, res) => {
   res.send('you are logged in, this is your profile : ' + req.user);
 });
 
-router.post('/', urlencodedParser, (req, res) => {
-  const newBook = new Book({
-    books: {
-      bookTitle: req.body.bookTitle,
-      author: req.body.author,
-      genre: req.body.genre
-    }
-  })
-
-  newBook.save()
-    .then(data => {
-      res.json(data);
-    })
-    .catch(err => {
-      res.send("Error posting book to DB");
-    })
-});
 
 router.post('/', urlencodedParser, (req, res) => {
   console.log(req.body);
@@ -61,10 +44,6 @@ router.post('/', urlencodedParser, (req, res) => {
 
   newUser.save()
     .then(data => {
-       User.findOne({ name: "Nick Kinlen" }).then(record => {
-        console.log("Found user : " + req.body.name);
-      });
-
       res.json(data)
     })
     .catch(err => {

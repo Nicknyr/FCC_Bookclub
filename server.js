@@ -8,11 +8,14 @@ const keys = require('./config/keys');
 const passport = require('passport');
 const profileRoutes = require('./routes/api/profile-routes');
 const bookRoutes = require('./routes/api/book-routes');
+const cors = require('cors');
 
 // Hooks up routes/api/items file
 const items = require('./routes/api/items');
 
 const app = express();
+
+app.use(cors());
 
 // Boderparser Middleware
 app.use(bodyParser.json());
