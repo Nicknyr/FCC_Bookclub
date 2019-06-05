@@ -14,16 +14,22 @@ import {
   Input } from 'reactstrap';
 import classnames from 'classnames';
 import ProfileBooksTable from './ProfileBooksTable';
-
+import axios from 'axios';
 
 class ProfileTabs extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      activeTab: '1',
+      username: '',
+      fullName: '',
+      city: '',
+      state: '',
+      address: ''
+    };
 
     this.toggle = this.toggle.bind(this);
-    this.state = {
-      activeTab: '1'
-    };
+    this.onSubmit = this.handleSubmit.bind(this);
   }
 
   toggle(tab) {
@@ -33,7 +39,44 @@ class ProfileTabs extends Component {
       });
     }
   }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const username = this.state.username;
+    const fullName = this.state.fullName;
+    const city = this.state.city;
+    const state = this.state.state;
+    const address = this.state.address;
+
+    axios.post('/profile',{
+      username: username,
+      fullName: fullName,
+      city: city,
+      state: state,
+      address: address
+    })
+    .then(res => {
+      console.log(res);
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  }
+
+  handleInputChange = (event) => {
+    event.preventDefault();
+
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  }
+
   render() {
+    const {username} = this.state;
+    const {fullName} = this.state;
+    const {city} = this.state;
+    const {state} = this.state;
+    const {address} = this.state;
     return (
       <div>
         <Nav tabs>
@@ -65,28 +108,57 @@ class ProfileTabs extends Component {
           <TabPane tabId="2">
             <Row>
               <Col sm="12">
-                  <Form id="update-profile-form">
+                  <Form
+                    method="POST"
+                    action="/profile"
+                    onSubmit={this.handleSubmit}
+                    id="update-profile-form">
                     <FormGroup>
-                      <Label for="exampleEmail">Username</Label>
-                      <Input type="email" name="username" id="username" placeholder="Enter username" />
+                      <Label>Username</Label>
+                      <Input
+                        value={username}
+                        name="username"
+                        id="username"
+                        onChange={this.handleInputChange}
+                        placeholder="Enter username" />
                     </FormGroup>
                     <FormGroup>
-                      <Label for="examplePassword">Full Name</Label>
-                      <Input type="password" name="fullname" id="name" placeholder="Enter name" />
+                      <Label>Full Name</Label>
+                      <Input
+                        value={fullName}
+                        name="fullName"
+                        id="name"
+                        onChange={this.handleInputChange}
+                        placeholder="Enter name" />
                     </FormGroup>
                     <FormGroup>
-                      <Label for="exampleEmail">City</Label>
-                      <Input type="email" name="city" id="city" placeholder="Enter city" />
+                      <Label>City</Label>
+                      <Input
+                        value={city}
+                        name="city"
+                        id="city"
+                        onChange={this.handleInputChange}
+                        placeholder="Enter city" />
                     </FormGroup>
                     <FormGroup>
-                      <Label for="exampleEmail">State</Label>
-                      <Input type="email" name="state" id="state" placeholder="Enter state" />
+                      <Label>State</Label>
+                      <Input
+                        value={state}
+                        name="state"
+                        id="state"
+                        onChange={this.handleInputChange}
+                        placeholder="Enter state" />
                     </FormGroup>
                     <FormGroup>
-                      <Label for="exampleEmail">Address</Label>
-                      <Input type="email" name="address" id="address" placeholder="Enter mailing address" />
+                      <Label>Address</Label>
+                      <Input
+                        value={address}
+                        name="address"
+                        id="address"
+                        onChange={this.handleInputChange}
+                        placeholder="Enter mailing address" />
                     </FormGroup>
-                    <Button>Submit</Button>
+                    <Button type="submit">Submit</Button>
                   </Form>
               </Col>
             </Row>

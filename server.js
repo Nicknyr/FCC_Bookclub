@@ -7,7 +7,7 @@ const cookieSession = require('cookie-session');
 const keys = require('./config/keys');
 const passport = require('passport');
 const profileRoutes = require('./routes/api/profile-routes');
-const bookRoutes = require('./routes/api/book-routes');
+//const bookRoutes = require('./routes/api/book-routes');
 const cors = require('cors');
 
 // Hooks up routes/api/items file
@@ -44,7 +44,7 @@ mongoose
 // Use Routes, sets up routes/api/items to be used
 app.use('/api/items', items);
 
-app.use('/book', bookRoutes);
+//app.use('/book', bookRoutes);
 
 // Use auth.js's routes
 app.use('/auth', authRoutes);

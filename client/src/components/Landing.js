@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Row, Col, Container } from 'reactstrap';
+import { Button, Row, Col } from 'reactstrap';
 import PileOfBooks from './images/pileofbooks.svg';
 
 
@@ -19,7 +19,7 @@ const Landing = (props) => {
           <img src={PileOfBooks} alt="Pile of Books" width="500px" />
         </Col>
       </Row>
-    
+
   );
 };
 

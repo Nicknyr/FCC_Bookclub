@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import { Row, Col, Container, Card, Button, CardTitle, CardText } from 'reactstrap';
+import { Row, Col, Container, Card, CardTitle, CardText } from 'reactstrap';
 import NavigationBar from './Nav';
 import Footer from './Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

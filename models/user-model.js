@@ -21,6 +21,10 @@ const userSchema = new Schema({
   githubID: String,
   profileUrl: String,
   avatar: String,
+  fullName: String,
+  city: String,
+  state: String,
+  address: String,
   books: [bookSchema]
 });
 

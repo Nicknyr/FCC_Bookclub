@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
 
@@ -15,6 +15,7 @@ router.get('/', (req, res) => {
 
 router.post('/', urlencodedParser, (req, res) => {
   console.log(req.body);
+  console.log("Book added from book-routes");
 
   const newBook = new Book({
     bookTitle: req.body.bookTitle,
@@ -33,3 +34,4 @@ router.post('/', urlencodedParser, (req, res) => {
 
 
 module.exports = router;
+*/

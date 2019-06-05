@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Table } from 'reactstrap';
 import NavigationBar from './Nav';
 import Footer from './Footer';
-import { Row, Col, Container } from 'reactstrap';
+import { Col, Container } from 'reactstrap';
 
 
 class BooksAvailable extends Component {

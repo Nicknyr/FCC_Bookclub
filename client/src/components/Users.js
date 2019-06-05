@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import { Row, Col, Container } from 'reactstrap';
+import { Col, Container } from 'reactstrap';
 import NavigationBar from './Nav';
 import Footer from './Footer';
 import UserTable from './UserTable';

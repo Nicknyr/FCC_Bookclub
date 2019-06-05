@@ -27,14 +27,19 @@ router.get('/', authCheck, (req, res) => {
 
 
 router.post('/', urlencodedParser, (req, res) => {
-  console.log(req.body);
-
+  console.log("req.body in post : " + req.body);
+  console.log("req.body.bookTitle :" + req.body.bookTitle);
+  console.log("Book added from profile-routes");
   const newUser = new User({
     name: req.body.name,
     username: req.body.username,
     githubID: req.body.githubID,
     profileUrl: req.body.profileUrl,
     avatar: req.body.avatar,
+    fullName: req.body.fullName,
+    city: req.body.city,
+    state: req.body.state,
+    address: req.body.address,
     books: {
       bookTitle: req.body.bookTitle,
       author: req.body.author,
@@ -49,6 +54,11 @@ router.post('/', urlencodedParser, (req, res) => {
     .catch(err => {
       res.send("Error posting to DB")
     });
+
+    User.findOne({ 'name': 'Nick Kinlen'}, (err, person) => {
+      if (err) return handleError(err);
+      console.log("Found myself in DB : " + person);
+    })
 
 });
 

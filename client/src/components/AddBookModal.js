@@ -24,11 +24,10 @@ class AddBookModal extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const data = this.state;
     const bookTitle = this.state.bookTitle;
     const author = this.state.author;
     const genre = this.state.genre;
-    //console.log("Data from form :" + data.bookTitle, data.author, data.genre);
+
     axios.post('/profile',{
       bookTitle: bookTitle,
       author: author,
@@ -40,15 +39,13 @@ class AddBookModal extends React.Component {
     .catch(err => {
       console.log(err);
     })
-
   }
 
   handleInputChange = (event) => {
     event.preventDefault();
 
     this.setState({
-      [event.target.name]:
-      event.target.value
+      [event.target.name]: event.target.value
     });
   }
 
