@@ -22,10 +22,17 @@ router.post('/', urlencodedParser, (req, res) => {
   // findOne is a method of Test model, not the newItem instance of Test
   // newItem.findOne is not a function
   // Test.findOne successfully finds the Milk item
+  /*
   Test.findOne({ name: 'Milk' }, function (err, item) {
     console.log("item in test-route contains :" + item);
   });
+  */
 
+  Test.findOneAndUpdate({name: 'Luigi'}, {name: 'Mario'}).then(function() {
+    Test.findOne({_id: newItem._id}).then(function(result) {
+      console.log("result contains : " + result);
+    })
+  });
 
   newItem.save().then(item => res.json(item));
 
