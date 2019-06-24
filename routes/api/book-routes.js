@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
-
 //Book Model
 const Book = require('../../models/book-model');
 

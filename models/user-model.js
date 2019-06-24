@@ -25,7 +25,8 @@ const userSchema = new Schema({
   city: String,
   state: String,
   address: String,
-  books: [bookSchema]
+  books: [bookSchema],
+  testing: String
 });
 
 const User = mongoose.model('user', userSchema);

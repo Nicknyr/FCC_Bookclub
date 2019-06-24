@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/api/auth');
+const testRoutes = require('./routes/api/test-route');
 const passportSetup = require('./config/passport-setup');
 const cookieSession = require('cookie-session');
 const keys = require('./config/keys');
@@ -43,7 +44,7 @@ mongoose
 
 // Use Routes, sets up routes/api/items to be used
 app.use('/api/items', items);
-
+app.use('/test', testRoutes);
 //app.use('/book', bookRoutes);
 
 // Use auth.js's routes
