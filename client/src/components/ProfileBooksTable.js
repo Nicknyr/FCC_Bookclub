@@ -8,38 +8,25 @@ class ProfileBooksTable extends Component {
     this.props.fetchUserBooks();
   }
   render() {
-    const data = this.props.userBooks;
-    console.log("data contains : " + data);
+    const books = Object.entries(this.props.userBooks.books).map((item, key) => {
+      return (
+        <tr key={key}>
+          <th scope="row">{key}</th>
+          <td>{item[1].bookTitle}</td>
+          <td>{item[1].author}</td>
+          <td>{item[1].genre}</td>
+        </tr>
+      );
+    })
+    console.log('books contain :' + books);
+
     return (
       <Table hover>
         <thead>
-          <tr>
-            <th>#</th>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Genre</th>
-          </tr>
+          <tbody>
+            {books}
+          </tbody>
         </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>1984</td>
-            <td>George Orwell</td>
-            <td>Fiction</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>A Clockwork Orange</td>
-            <td>Anthony Burgress</td>
-            <td>Fiction</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>For Whom the Bell Tolls</td>
-            <td>Ernest Hemingway</td>
-            <td>Fiction</td>
-          </tr>
-        </tbody>
       </Table>
     );
   }
@@ -50,7 +37,7 @@ const mapDispatchToProps = dispatch => ({
 })
 
 const mapStateToProps = state => ({
-  userBooks: state.fetchUsersBooksReducer
+  userBooks: state.fetchUserBooksReducer
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProfileBooksTable);

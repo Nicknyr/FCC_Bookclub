@@ -1,5 +1,7 @@
 export default function reducer( state = {
-  data: {}
+  data: {},
+  username: '',
+  books: ''
 }, action) {
   switch(action.type) {
     case "FETCH_USER_BOOKS": {
@@ -20,7 +22,9 @@ export default function reducer( state = {
         ...state,
         fetching: false,
         fetched: true,
-        data: action.payload
+        data: action.payload,
+        username: action.payload[0].username,
+        books: action.payload[0].books
       }
     }
     default: return state;
