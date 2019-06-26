@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap';
+import {connect} from 'react-redux';
+import { fetchUserBooks } from '../actions/fetchUserBooks';
 
 class ProfileBooksTable extends Component {
+  componentDidMount = () => {
+    this.props.fetchUserBooks();
+  }
   render() {
+    const data = this.props.userBooks;
+    console.log("data contains : " + data);
     return (
       <Table hover>
         <thead>
@@ -38,4 +45,12 @@ class ProfileBooksTable extends Component {
   }
 }
 
-export default ProfileBooksTable;
+const mapDispatchToProps = dispatch => ({
+  fetchUserBooks: () => dispatch(fetchUserBooks())
+})
+
+const mapStateToProps = state => ({
+  userBooks: state.fetchUsersBooksReducer
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileBooksTable);

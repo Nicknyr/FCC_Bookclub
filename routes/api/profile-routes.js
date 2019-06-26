@@ -30,9 +30,7 @@ router.post('/', urlencodedParser, (req, res) => {
   //console.log("req.body in post : " + req.body);
   //console.log("req.body.bookTitle :" + req.body.bookTitle);
   //console.log("Book added from profile-routes");
-
   // Access signed in user's DB id with req.session.passport.user
-
   const newUser = new User({
     name: req.body.name,
     username: req.body.username,
@@ -58,27 +56,14 @@ router.post('/', urlencodedParser, (req, res) => {
       res.send("Error posting to DB")
     });
 
-    var myId = "5cf9e16edecd7d0c661eaffa";
 
-    console.log("req.session.passport.user : " + req.session.passport.user);
-/*
-    newUser.findOneAndUpdate({name: 'Mario',  _id: req.session.passport.user}, {name: 'Luigi'}).then(() => {
+    //var myId = "5cf9e16edecd7d0c661eaffa";
+    //console.log("req.session.passport.user : " + req.session.passport.user);
+    User.findOneAndUpdate({ username: 'A Clockwork Orange'}, { username: 'Nicknyr'}).then(() => {
       newUser.findOne({_id: newUser._id}).then(result => {
         console.log(result);
       })
-    })
-
-
-    /*
-    User.findOne({ 'name': 'Nick Kinlen'}, (err, person) => {
-      if (err) return handleError(err);
-      console.log("Found myself in DB : " + person);
-    })
-
-    newUser.updateOne({_id: req.session.passport.user}, () => {
-
     });
-    */
 
 });
 

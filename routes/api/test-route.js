@@ -28,6 +28,7 @@ router.post('/', urlencodedParser, (req, res) => {
   });
   */
 
+  // Successfully updates Luigi and changes name to Mario
   Test.findOneAndUpdate({name: 'Luigi'}, {name: 'Mario'}).then(function() {
     Test.findOne({_id: newItem._id}).then(function(result) {
       console.log("result contains : " + result);
